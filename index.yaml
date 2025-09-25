@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  litellm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-09-25T19:26:02.357129923Z"
+    description: A Helm chart for Kubernetes
+    digest: 843f6165e41465c7e2d2fae72d2004a402a74cfd325a50bc48ef79768133366b
+    name: litellm
+    type: application
+    urls:
+    - https://github.com/lareira/charts/releases/download/litellm-0.2.0/litellm-0.2.0.tgz
+    version: 0.2.0
+generated: "2025-09-25T19:26:02.357136385Z"
