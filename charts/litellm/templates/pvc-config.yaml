@@ -1,0 +1,16 @@
+{{- if and .Values.configPersistence.enabled (not .Values.configPersistence.existingClaim) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "litellm.fullname" . }}-config-pvc
+  labels:
+    {{- include "litellm.labels" . | nindent 4 }}
+spec:
+  accessModes: {{ toYaml .Values.configPersistence.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.configPersistence.size }}
+  {{- if .Values.configPersistence.storageClassName }}
+  storageClassName: {{ .Values.configPersistence.storageClassName }}
+  {{- end }}
+{{- end }}

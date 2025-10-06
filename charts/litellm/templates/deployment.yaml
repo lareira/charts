@@ -49,8 +49,8 @@ spec:
             - name: PROXY_MASTER_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.masterkeySecretName | default (printf "%s-masterkey" (include "litellm.fullname" .)) }}
-                  key: {{ .Values.masterkeySecretKey | default "masterkey" }}
+                  name: {{ (include "litellm.fullname" .) }}-masterkey
+                  key: masterkey
             {{- if .Values.envVars }}
             {{- range $key, $val := .Values.envVars }}
             - name: {{ $key }}
@@ -117,6 +117,10 @@ spec:
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          {{- if .Values.configPersistence.enabled }}
+            - name: litellm-config-persistence
+              mountPath: "/root/.config/litellm"
+          {{- end }}
       {{- with .Values.extraContainers }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -142,6 +146,11 @@ spec:
             items:
               - key: {{ .Values.proxyConfigMap.key | default "config.yaml" }}
                 path: "config.yaml"
+        {{- if .Values.configPersistence.enabled }}
+        - name: litellm-config-persistence
+          persistentVolumeClaim:
+            claimName: {{ if .Values.configPersistence.existingClaim }}{{ .Values.configPersistence.existingClaim }}{{ else }}{{ include "litellm.fullname" . }}-config-pvc{{ end }}
+        {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
