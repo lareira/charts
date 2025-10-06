@@ -3,6 +3,16 @@ entries:
   litellm:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-10-06T18:32:45.140130787Z"
+    description: A Helm chart for Kubernetes
+    digest: 1f0971d1b09edf7c723b5bba0c66917e86f8af453bee3d46cf63f4dc581a813e
+    name: litellm
+    type: application
+    urls:
+    - https://github.com/lareira/charts/releases/download/litellm-0.3.0/litellm-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-09-25T19:26:02.357129923Z"
     description: A Helm chart for Kubernetes
     digest: 843f6165e41465c7e2d2fae72d2004a402a74cfd325a50bc48ef79768133366b
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/lareira/charts/releases/download/litellm-0.2.0/litellm-0.2.0.tgz
     version: 0.2.0
-generated: "2025-09-25T19:26:02.357136385Z"
+generated: "2025-10-06T18:32:45.140139162Z"
