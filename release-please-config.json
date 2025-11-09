@@ -3,6 +3,7 @@
     "include-component-in-tag": true,
     "separate-pull-requests": true,
     "packages": {
-       "charts/litellm": {}
+    "charts/litellm": {},
+    "charts/homepage": {}
     }
 }
