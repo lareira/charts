@@ -3,6 +3,16 @@ entries:
   homepage:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-11-09T07:56:49.985270052Z"
+    description: A Helm chart for Kubernetes
+    digest: 36d5254e38260f039165cdfcfeb6556b2133c8df0dd13fe9dba9ac8a4c4f609e
+    name: homepage
+    type: application
+    urls:
+    - https://github.com/lareira/charts/releases/download/homepage-1.0.1/homepage-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-11-09T07:16:36.1801953Z"
     description: A Helm chart for Kubernetes
     digest: 0dbbd849beb52a16d4159998c2be866e374745207a314dc299d39c6e2b7e8d64
@@ -32,4 +42,4 @@ entries:
     urls:
     - https://github.com/lareira/charts/releases/download/litellm-0.2.0/litellm-0.2.0.tgz
     version: 0.2.0
-generated: "2025-11-09T07:16:36.180209056Z"
+generated: "2025-11-09T07:56:49.985280631Z"
